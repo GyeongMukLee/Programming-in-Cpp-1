@@ -12,7 +12,7 @@
 
 int main(void){
     int a1, a2, diff;
-    scanf("%d %d", &a1, &a2);
+    scanf("%d %d", &a1, &a2);   //adsfadsf
     diff=a1-a2;
 
     if(diff>0){
