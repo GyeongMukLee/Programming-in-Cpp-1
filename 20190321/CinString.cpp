@@ -4,20 +4,20 @@
 
 int main(){
     int nAge;
-    std::cout << "³ªÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä." << std::endl;
+    std::cout << "ë‚˜ì´ë¥¼ ìž…ë ¥í•˜ì„¸ìš”." << std::endl;
     std::cin >> nAge;
 
     char szJob[32];
-    std::cout << "Á÷¾÷À» ÀÔ·ÂÇÏ¼¼¿ä." << std::endl;
+    std::cout << "ì§ì—…ì„ ìž…ë ¥í•˜ì„¸ìš”." << std::endl;
     std::cin >> szJob;
 
     std::string strName;
-    std::cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä." << std::endl;
+    std::cout << "ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš”." << std::endl;
     std::cin >>strName;
 
-    std::cout << "´ç½ÅÀÇ ÀÌ¸§Àº " << strName << "ÀÌ°í, "
-    << "³ªÀÌ´Â " << nAge << "¼¼ÀÌ¸ç,"
-    << "Á÷¾÷Àº " << szJob << "ÀÔ´Ï´Ù." << std::endl;
+    std::cout << "ë‹¹ì‹ ì˜ ì´ë¦„ì€ " << strName << "ì´ê³ , "
+    << "ë‚˜ì´ëŠ” " << nAge << "ì‚´ì´ë©°,"
+    << "ì§ì—…ì€ " << szJob << "ìž…ë‹ˆë‹¤." << std::endl;
 
     return 0;
 }
