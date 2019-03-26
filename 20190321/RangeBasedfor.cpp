@@ -1,7 +1,8 @@
 #include<iostream>
+#include<tchar.h>
 using namespace std;
 
-int main(int argc, char *argv[]){
+int _tmain(int argc, _TCHAR *argv[]){
     int aList[5] = {10, 20, 30, 40, 50};
 
     //전형적인 C 스타일 반복문

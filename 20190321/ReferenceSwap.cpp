@@ -1,4 +1,5 @@
 #include<iostream>
+#include<tchar.h>
 using namespace std;
 
 void swap(int &a, int &b){
@@ -7,7 +8,7 @@ void swap(int &a, int &b){
     b=nTmp;
 }
 
-int main(int argc, char *argv[]){
+int _tmain(int argc, _TCHAR *argv[]){
     int x=10,y=20;
 
     //참조 전달이며 두 변수의 값이 교환된다.

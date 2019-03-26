@@ -1,7 +1,8 @@
 #include<iostream>
+#include<tchar.h>
 using namespace std;
 
-int main(int argc, char *argv[]){
+int _tmain(int argc, _TCHAR *argv[]){
     int nData=10;
 
     //nData변수에 대한 참조자 선언

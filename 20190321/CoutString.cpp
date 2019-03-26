@@ -1,7 +1,8 @@
 #include <string>
 #include <iostream>
+#include <tchar.h>
 
-int main(){
+int _tmain(int argc, _TCHAR *argv[]){
     std::string strData = "Test string";
     std::cout << "Sample String" << std::endl;
     std::cout << strData << std::endl;

@@ -1,4 +1,5 @@
 #include<iostream>
+#include<tchar.h>
 using namespace std;
 
 int TestFunc(int nParam){
@@ -7,7 +8,7 @@ int TestFunc(int nParam){
     return nResult;
 }
 
-int main(int argc, char *argv[]){
+int _tmain(int argc, _TCHAR *argv[]){
     int nInput = 0;
     cout << "Input Number: ";
     cin >> nInput;

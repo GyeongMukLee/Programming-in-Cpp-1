@@ -1,7 +1,8 @@
 #include <iostream>
+#include <tchar.h>
 using namespace std;
 
-int main(int argc, char *argv[]){
+int _tmain(int argc, _TCHAR *argv[]){
     //객체를 배열 형태로 동적 생성한다
     int *arr = new int[5];
     for(int i=0;i<5;++i){

@@ -1,8 +1,9 @@
 #include <string>
 #include <cstdio>
 #include <iostream>
+#include <tchar.h>
 
-int main(){
+int _tmain(int argc, _TCHAR *argv[]){
     int nAge;
     std::cout << "나이를 입력하세요." << std::endl;
     std::cin >> nAge;

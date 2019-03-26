@@ -1,6 +1,7 @@
 #include <iostream>
+#include <tchar.h>
 
-int main(int argc, char *argv[]){
+int _tmain(int argc, _TCHAR *argv[]){
     //인스턴스만 동적으로 생성하는 경우
     int *pData = new int;
 
