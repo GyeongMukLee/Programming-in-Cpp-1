@@ -4,19 +4,19 @@
 //  함수의 다중 정의
 
 int Add(int a, int b, int c){
-    std::cout << a+b+c << std::endl;
+    std::cout << "Add(int, int, int): ";
 
     return a+b+c;
 }
 
 int Add(int a, int b){
-    std::cout << a+b << std::endl;
+    std::cout << "Add(int, int): ";
 
     return a+b;
 }
 
 double Add(double a, double b){
-    std::cout << a+b << std::endl;
+    std::cout << "Add(double, double): ";
 
     return a+b;
 }
