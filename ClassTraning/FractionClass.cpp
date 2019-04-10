@@ -46,8 +46,8 @@ public:
 
     //분수의 분모와 분자를 변경하는 함수
     void setFraction(int num, int den){
-        this->numerator=num;
-        this->denominator=den;
+        setDenominator(den);
+        setNumerator(num);
     }
 };
 
