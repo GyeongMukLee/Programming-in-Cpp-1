@@ -3,8 +3,11 @@
 
 class Fraction{
 private:
-    int numerator;      //분자
-    int denominator;    //분모
+    //분자
+    int numerator;
+
+    //분모
+    int denominator;
 
 public:
     //생성자 선언 및 설정
@@ -49,8 +52,9 @@ public:
     }
 };
 
+//분수를 출력하는 전역변수. 현재 오류발생함
 void printFraction(Fraction f){
-    std::cout<<f.getDenominator<<'/'<<f.getNumerator<<std::endl;
+    std::cout << f.getDenominator << '/' << f.getNumerator << std::endl;
 }
 
 int _tmain() {
@@ -72,6 +76,7 @@ int _tmain() {
     Fraction d(1,1);
     std::cout << "d = ";
     printFraction(d);
+
     Fraction e(1,0);   // 이때 에러메시지와 함께 다른 정수를 입력하라는 메시지가 나오면 3를 입력할 것.
     std::cout << "e = ";
     printFraction(e);
