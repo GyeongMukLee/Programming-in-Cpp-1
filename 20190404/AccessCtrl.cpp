@@ -20,7 +20,7 @@ int _tmain(int argc, _TCHAR *argv[]){
     CMyData data;
 
     data.SetData(10);
-    cout<<data.GetData<<endl;
+    cout<<data.GetData()<<endl;
 
     return 0;
 }
