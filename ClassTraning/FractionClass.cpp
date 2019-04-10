@@ -20,12 +20,12 @@ public:
     }
 
     //분수의 분자를 return하는 함수
-    int getNumerator(){
+    int getNumerator() const {
         return this->numerator;
     }
 
     //분수의 분모를 return하는 함수
-    int getDenominator(){
+    int getDenominator() const {
         return this->denominator;
     }
 
@@ -37,7 +37,7 @@ public:
     //분수의 분모를 변경하는 함수
     void setDenominator(int value){
         while(value==0){      //분모가 0일 수 없으므로 확인하는 과정이 필요함
-            std::cout<<"분모가 0이 될 수 없습니다. ";
+            std::cout<<"분모가 0이 될 수 없습니다. 다시 입력해 주세요. ";
             std::cin>>value;
         }
 
@@ -51,7 +51,7 @@ public:
     }
 };
 
-//분수를 출력하는 전역변수. 현재 오류발생함
+//분수를 출력하는 전역변수
 void printFraction(Fraction f){
     std::cout  << f.getNumerator() << "/" << f.getDenominator() << std::endl;
 }
