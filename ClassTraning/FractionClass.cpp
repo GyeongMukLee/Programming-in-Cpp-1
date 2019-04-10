@@ -1,5 +1,4 @@
 #include <iostream>
-#include <tchar.h>
 
 class Fraction{
 private:
@@ -54,12 +53,11 @@ public:
 
 //분수를 출력하는 전역변수. 현재 오류발생함
 void printFraction(Fraction f){
-    std::cout << f.getDenominator << '/' << f.getNumerator << std::endl;
+    std::cout << f.getDenominator << "/" << f.getNumerator << std::endl;
 }
 
-int _tmain() {
+int main() {
     std::cout << "** 분수 클래스 실습  Main() 루틴 **" << std::endl << std::endl; 
- 
  
     Fraction a(1,2);
     std::cout << "a = ";
