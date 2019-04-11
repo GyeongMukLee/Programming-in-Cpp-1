@@ -57,9 +57,11 @@ public:
     }
 
     // = 연산자에 대한 다중 정의
-    void operator= (const Fraction &rhs) {
+    Fraction operator= (const Fraction &rhs) {
         this->numerator=rhs.getNumerator();
         this->denominator=rhs.getDenominator();
+
+        return *this;
     }
 
     // + 연산자에 대한 다중 정의
