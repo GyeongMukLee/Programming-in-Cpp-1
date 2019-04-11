@@ -83,7 +83,7 @@ public:
         result.setDenominator(this->getDenominator() * rhs.getDenominator());
 
         //두 분수(a,b)를 더한 것의 분자는 (a의 분자*b의 분모 - b의 분자*a의 분모)를 계산한 것과 같다. 
-        result.setNumerator((this->getDenominator()*rhs.getNumerator()) - (this->getNumerator()*rhs.getDenominator()));
+        result.setNumerator((this->getNumerator()*rhs.getDenominator()) - (this->getDenominator()*rhs.getNumerator()));
 
         return result;
     }
