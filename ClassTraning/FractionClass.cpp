@@ -103,6 +103,7 @@ public:
         return result;
     }
 
+    // '/' 연산자에 대한 다중 정의
     Fraction operator/ (const Fraction &rhs) const {
         Fraction result(1,1);
 
@@ -115,6 +116,7 @@ public:
         return result;
     }
 
+    // == 연산자에 대한 다중 정의
     bool operator==(const Fraction &rhs) const {
         if(this->getDenominator()==rhs.getDenominator()){
             if(this->getNumerator()==rhs.getNumerator()){
