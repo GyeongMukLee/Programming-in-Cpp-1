@@ -14,6 +14,12 @@ public:
         setNumerator(num);
         setDenominator(den);
     }
+
+    //복사생성자
+    Fraction(const Fraction &rhs){
+        this->numerator=rhs.getNumerator();
+        this->denominator=rhs.getDenominator();
+    }
     
     //소멸자
     ~Fraction(){
@@ -49,6 +55,80 @@ public:
         setDenominator(den);
         setNumerator(num);
     }
+
+    // = 연산자에 대한 다중 정의
+    void operator= (const Fraction &rhs) {
+        this->numerator=rhs.getNumerator();
+        this->denominator=rhs.getDenominator();
+    }
+
+    // + 연산자에 대한 다중 정의
+    Fraction operator+ (const Fraction &rhs) const {
+        Fraction result(1,1);
+
+        //두 분수를 더한 것의 분모는 그 두 분수의 분모를 곱한 것과 같다.
+        result.setDenominator(this->getDenominator() * rhs.getDenominator());
+
+        //두 분수(a,b)를 더한 것의 분자는 (a의 분자*b의 분모 + b의 분자*a의 분모)를 계산한 것과 같다. 
+        result.setNumerator((this->getDenominator() * rhs.getNumerator())+(this->getNumerator()*rhs.getDenominator()));
+
+        return result;
+    }
+
+    // - 연산자에 대한 다중 정의
+    Fraction operator- (const Fraction &rhs) const {
+        Fraction result(1,1);
+
+        //두 분수를 더한 것의 분모는 그 두 분수의 분모를 곱한 것과 같다.
+        result.setDenominator(this->getDenominator() * rhs.getDenominator());
+
+        //두 분수(a,b)를 더한 것의 분자는 (a의 분자*b의 분모 - b의 분자*a의 분모)를 계산한 것과 같다. 
+        result.setNumerator((this->getDenominator()*rhs.getNumerator()) - (this->getNumerator()*rhs.getDenominator()));
+
+        return result;
+    }
+
+    // * 연산자에 대한 다중 정의
+    Fraction operator* (const Fraction &rhs) const {
+        Fraction result(1,1);
+
+        //두 분수를 곱한 것의 분모는 그 두 분수의 분모를 곱한 것과 같다.
+        result.setDenominator(this->getDenominator() * rhs.getDenominator());
+
+        //두 분수를 곱한 것의 분자는 그 두 분수의 분자를 곱한 것과 같다.
+        result.setNumerator(this->getNumerator() * rhs.getNumerator());
+
+        return result;
+    }
+
+    Fraction operator/ (const Fraction &rhs) const {
+        Fraction result(1,1);
+
+        //두 분수(a,b)를 나눈 것의 분모는 a의 분모와 b의 분자를 곱한 것과 같다.
+        result.setDenominator(this->getDenominator() * rhs.getNumerator());
+
+        //두 분수(a,b)를 나눈 것의 분자는 a의 분자와 b의 분모를 곱한 것과 같다.
+        result.setNumerator(this->getNumerator() * rhs.getDenominator());
+
+        return result;
+    }
+
+    bool operator==(const Fraction &rhs) const {
+        if(this->getDenominator()==rhs.getDenominator()){
+            if(this->getNumerator()==rhs.getNumerator()){
+                //분자와 분모가 모두 같으면 참을 return한다
+                return true;
+            }
+            else{
+                //나머지 경우에는 거짓을 return한다.
+                return false;
+            }
+        }
+        else{
+            //나머지 경우에는 거짓을 return 한다.
+            return false;
+        }
+    }
 };
 
 //분수를 출력하는 전역변수
@@ -57,6 +137,7 @@ void printFraction(Fraction f){
 }
 
 int main() {
+    /*
     std::cout << "** 분수 클래스 실습  Main() 루틴 **" << std::endl << std::endl; 
  
     Fraction a(1,2);
@@ -98,4 +179,32 @@ int main() {
     printFraction(e);
 
     return 0;
+    */
+
+    std::cout << "** 분수 클래스 실습2 Main() 루틴 **" << std::endl << std::endl;
+
+    Fraction a(1,2);
+    std::cout << "a = ";
+    printFraction(a);
+
+    Fraction b(2,3);
+    std::cout << "b = ";
+    printFraction(b);
+
+    std::cout << "a + b = ";
+    printFraction(a+b);
+
+    std::cout << "a - b = ";
+    printFraction(a-b);
+
+    std::cout << "a * b = ";
+    printFraction(a*b);
+
+    std::cout << "a / b = ";
+    printFraction(a/b);
+
+    std::cout << "if (a==a) : "<< ( a==a ) << std::endl;
+    std::cout << "if (a==b) : "<< ( a==b ) << std::endl;
+    std::cout << "if (b==a) : "<< ( b==a ) << std::endl;
+    std::cout << "if (b==b) : "<< ( b==b ) << std::endl;
 }
