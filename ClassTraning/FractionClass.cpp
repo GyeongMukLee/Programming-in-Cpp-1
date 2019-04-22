@@ -56,6 +56,7 @@ public:
         setNumerator(num);
     }
 
+/*
     // = 연산자에 대한 다중 정의
     Fraction operator= (const Fraction &rhs) {
         this->numerator=rhs.getNumerator();
@@ -64,6 +65,7 @@ public:
         return *this;
     }
 
+*/
     // + 연산자에 대한 다중 정의
     Fraction operator+ (const Fraction &rhs) const {
         Fraction result(1,1);
@@ -206,6 +208,11 @@ int main() {
 
     std::cout << "a / b = ";
     printFraction(a/b);
+
+    Fraction c(1,1);
+    c=a+b;
+    std::cout << "c = ";
+    printFraction(c);
 
     std::cout << "if (a==a) : "<< ( a==a ) << std::endl;
     std::cout << "if (a==b) : "<< ( a==b ) << std::endl;
