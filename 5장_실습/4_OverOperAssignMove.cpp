@@ -23,7 +23,7 @@ public:
     operator int(){return *m_pnData;}
 
     //덧셈 연산자 다중 정의
-    CMyData& operator+(const CMyData &rhs){
+    CMyData operator+(const CMyData &rhs){
         //호출자 함수에서 이름없는 임시 객체가 생성된다
         return CMyData(*m_pnData+*rhs.m_pnData);
     }
