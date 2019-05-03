@@ -99,8 +99,10 @@ class Student : public Person {
         setMajor(major);
     }
 
+    // Student 클래스의 속성 중 하나인 전공을 변경하는 메서드
     void setMajor(const char* major) { this->major = major; }
 
+    // Student 클래스의 속성 중 하나인 전공을 return하는 메서드
     const char* getMajor() const { return this->major; }
 
     void speak() const { std::cout << "I have a homework" << std::endl; }
