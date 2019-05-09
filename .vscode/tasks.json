@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C 컴파일",
+            "type": "shell",
+            "group": "build",
+            "command": "gcc",
+            "args": [
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ]
+            }
+        },
+        {
+            "label": "C++ 컴파일",
+            "type": "shell",
+            "group": "build",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+            ],
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ]
+            }
+        },
+        {
+            "label": "shell에서 실행",
+            "type": "shell",
+            "group": "test",
+            "command": "chcp 65001 && /c ${fileDirname}/${fileBasenameNoExtension}.exe",
+        }
+    ]
+}
