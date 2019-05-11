@@ -6,19 +6,26 @@ class Animal {
     int age;           // Animal 클래스의 객체의 나이
     const char* name;  // Animal 클래스의 객체의 이름
 
+    static unsigned int animalCount,
+                        rabbitCount,
+                        catCount,
+                        personCount,
+                        studentCount;
+
    public:
     // Animal 클래스의 생성자
     Animal(int age, const char* name) {
+        Animal::animalCount++;
         this->setAge(age);
         this->setName(name);
     }
 
     // Animal 클래스의 소멸자
     // (소멸자는 나중에 사용할 예정)
-    ~Animal() {}
+    ~Animal() { Animal::animalCount--; }
 
     // 나이를 변경하는 메서드
-    void setAge(int age) { this->age = age; }
+    void setAge(const int age) { this->age = age; }
 
     // 동물의 나이를 return 하는 메서드
     int getAge() const { return this->age; }
@@ -34,15 +41,26 @@ class Animal {
         std::cout << "Animal: (" << this->getAge() << "," << this->getName()
                   << ")" << std::endl;
     }
+
+    static void animalCountStatistics(){
+        std::cout<<"*************************"<<std::endl;
+        std::cout<<"      Statistics         "<<std::endl;
+        std::cout<<"*************************"<<std::endl;
+        std::cout<<" # of Animal  : "<<Animal::animalCount<<std::endl;
+        std::cout<<" # of Rabbit  : "<<Animal::rabbitCount<<std::endl;
+        std::cout<<" # of Cat     : "<<Animal::catCount<<std::endl;
+        std::cout<<" # of Person  : "<<Animal::animalCount<<std::endl;
+        std::cout<<" # of Student : "<<Animal::animalCount<<std::endl;
+    }
 };
 
 class Rabbit : public Animal {
    public:
     // Rabbit 클래스의 생성자
-    Rabbit(int age, const char* name) : Animal(age, name) {}
+    Rabbit(int age, const char* name) : Animal(age, name) { Animal::rabbitCount++; }
 
     // Rabbit 클래스의 소멸자
-    ~Rabbit() {}
+    ~Rabbit() { Animal::rabbitCount--; }
 
     // 토끼의 정보(나이, 이름)을 출력하는 메서드.
     // 부모 클래스의 print 메서드 오버라이딩
@@ -55,10 +73,10 @@ class Rabbit : public Animal {
 class Cat : public Animal {
    public:
     // Cat 클래스의 생성자
-    Cat(int age, const char* name) : Animal(age, name) {}
+    Cat(int age, const char* name) : Animal(age, name) { Animal::catCount++; }
 
     // Cat 클래스의 소멸자
-    ~Cat() {}
+    ~Cat() { Animal::catCount--; }
 
     void speak() const { std::cout << "meow" << std::endl; }
 
@@ -72,12 +90,13 @@ class Cat : public Animal {
 
 class Person : public Animal {
    public:
-    Person(int age, const char* name) : Animal(age, name) {}
-    ~Person() {}
+    Person(int age, const char* name) : Animal(age, name) { Animal::personCount++; }
+
+    ~Person() { Animal::personCount--; }
 
     // Person 클래스의 두 객체의 나이를 비교하는 메서드
     int age_diff(const Person& other) const {
-        return (this->age) - (other.age);
+        return (this->getAge()) - (other.getAge());
     }
 
     void speak() const { std::cout << "Hello" << std::endl; }
@@ -96,8 +115,11 @@ class Student : public Person {
 
    public:
     Student(int age, const char* name, const char* major) : Person(age, name) {
+        Animal::studentCount++;
         setMajor(major);
     }
+
+    ~Student(){ Animal::studentCount--; }
 
     // Student 클래스의 속성 중 하나인 전공을 변경하는 메서드
     void setMajor(const char* major) { this->major = major; }
@@ -114,6 +136,13 @@ class Student : public Person {
                   << "," << this->getMajor() << ")" << std::endl;
     }
 };
+
+unsigned int Animal::animalCount=0,
+             Animal::rabbitCount=0,
+             Animal::catCount=0,
+             Animal::personCount=0,
+             Animal::studentCount=0;
+
 
 int main(void) {
     // 미리 제공된 main 메서드
@@ -160,5 +189,7 @@ int main(void) {
     s2.speak();
 
     std::cout << s1.age_diff(s2) << std::endl;
+
+    Animal::animalCountStatistics();
     return 0;
 }

@@ -17,8 +17,8 @@ public:
 
     //복사생성자
     Fraction(const Fraction &rhs){
-        this->numerator=rhs.getNumerator();
-        this->denominator=rhs.getDenominator();
+        this->numerator = rhs.getNumerator();
+        this->denominator = rhs.getDenominator();
     }
     
     //소멸자
@@ -56,7 +56,7 @@ public:
         setNumerator(num);
     }
 
-/*
+
     // = 연산자에 대한 다중 정의
     Fraction operator= (const Fraction &rhs) {
         this->numerator=rhs.getNumerator();
@@ -65,7 +65,7 @@ public:
         return *this;
     }
 
-*/
+
     // + 연산자에 대한 다중 정의
     Fraction operator+ (const Fraction &rhs) const {
         Fraction result(1,1);
