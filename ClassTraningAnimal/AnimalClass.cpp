@@ -13,7 +13,6 @@
     - Animal 클래스 내에서 객체의 개수를 세는 static 변수를 만든다.
 */
 
-#include <cstring>
 #include <iostream>
 
 class Animal {
