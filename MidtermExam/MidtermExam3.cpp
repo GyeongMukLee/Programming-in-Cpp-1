@@ -12,9 +12,9 @@ class CTest1 {
         this->aValue = nParam;  // 매개변수를 사용하여 초기화
     }
     CTest1(const CTest1 &obj) {
-        this->setValue(obj.getValue);  // 복사 생성자
+        this->setValue(obj.getValue());  // 복사 생성자
     }
-    int getValue(void) {
+    int getValue(void) const {
         return aValue;
     }
     void setValue(int nParam) {
@@ -26,7 +26,7 @@ class CTest1 {
 };
 
 int main() {
-    cout << "*******************************************************************" << endl;      
+    cout << "*******************************************************************" << endl;
     cout << "  문제 3.  여러  생성자(기본, 변환, 복사)를 작성하는 프로그램" << endl;
     cout << "*******************************************************************" << endl;
     cout << endl;

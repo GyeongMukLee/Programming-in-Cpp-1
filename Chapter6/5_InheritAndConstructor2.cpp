@@ -9,7 +9,10 @@ class CMyDataA {
         m_pszData = new char[32];
     }
 
-    ~CMyDataA() { cout << "~CMyDataA()" << endl; }
+    ~CMyDataA() {
+        cout << "~CMyDataA()" << endl;
+        delete m_pszData;
+    }
 
    protected:
     char* m_pszData;
@@ -26,6 +29,8 @@ class CMyDataC : public CMyDataB {
     CMyDataC() { cout << "CMyDataC()" << endl; }
     ~CMyDataC() {
         cout << "~CMyDataC()" << endl;
+
+        // 파생 클래스에서 부모 클래스 멤버 메모리를 해제했다.
         delete m_pszData;
     }
 };
