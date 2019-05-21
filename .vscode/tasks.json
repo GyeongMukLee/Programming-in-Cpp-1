@@ -41,7 +41,7 @@
             "label": "shell에서 실행",
             "type": "shell",
             "group": "test",
-            "command": "chcp 65001 && ${fileDirname}/${fileBasenameNoExtension}.exe",
+            "command": "chcp 65001 & ${fileDirname}/${fileBasenameNoExtension}.exe",
         }
     ]
 }
