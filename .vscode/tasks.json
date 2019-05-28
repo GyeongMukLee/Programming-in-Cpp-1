@@ -9,16 +9,11 @@
             "group": "build",
             "command": "gcc",
             "args": [
+                "-g",
                 "-o",
                 "${fileBasenameNoExtension}",
                 "${file}"
-            ],
-            "problemMatcher": {
-                "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
-                ]
-            }
+            ]
         },
         {
             "label": "C++ 컴파일",
@@ -26,16 +21,11 @@
             "group": "build",
             "command": "g++",
             "args": [
+                "-g",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-            ],
-            "problemMatcher": {
-                "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
-                ]
-            }
+            ]
         },
         {
             "label": "shell에서 실행",

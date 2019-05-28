@@ -1,3 +1,4 @@
-.vscode/ipch/
+.vs/
+.vscode/
 *.exe
 *.o
