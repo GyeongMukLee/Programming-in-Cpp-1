@@ -13,7 +13,7 @@ template <typename T>
 class CMyDataEx : public CMyData<T> {
    public:
     T getData() const { return m_Data; }
-    void setData(T param) { m_data = param; }
+    void setData(T param) { m_Data = param; }
 };
 
 int _tmain(int argc, _TCHAR *argv[]) {

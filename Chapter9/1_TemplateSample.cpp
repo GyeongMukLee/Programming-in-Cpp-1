@@ -6,11 +6,11 @@ using namespace std;
 template <typename T>
 class CMyData {
    public:
-    CMyData(T param) : m_nData(param) {}
+    CMyData(T param) : m_Data(param) {}
     T getData() const { return m_Data; }
 
     // 형식에 대한 변환자 제공
-    operator T() { return m_nData; }
+    operator T() { return m_Data; }
     void setData(T param) { m_Data = param; }
 
    private:

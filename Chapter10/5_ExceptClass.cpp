@@ -18,7 +18,7 @@ class CMyException {
     char m_szMsg[128];
 };
 
-int tmain(int argc, _TCHAR* argv[]) {
+int _tmain(int argc, _TCHAR* argv[]) {
     try {
         int nInput = 0;
         cout << "양의 정수를 입력하세요: ";
@@ -30,7 +30,7 @@ int tmain(int argc, _TCHAR* argv[]) {
         }
     } catch (CMyException& exp) {
         cout << "ERROR CODE [" << exp.getErrorCode() << "] "
-             << exp.getErrorCode() << endl;
+             << exp.getMessage() << endl;
     }
 
     return 0;

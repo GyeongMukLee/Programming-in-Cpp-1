@@ -82,7 +82,7 @@ int _tmain(int argc, _TCHAR *argv[]) {
     arr2 = arr;
 
     for (int i = 0; i < 5; ++i) {
-        cout << arr2[i] << "";
+        cout << arr2[i] << " ";
     }
     cout << endl;
 

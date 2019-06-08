@@ -21,7 +21,7 @@ CTest<T>::CTest() {}
 //멤버 함수 정의
 template <typename T>
 T CTest<T>::TestFunc() {
-    return m_nData;
+    return m_Data;
 }
 
 //정적 멤버 변수 정의

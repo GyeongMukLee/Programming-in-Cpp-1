@@ -57,19 +57,24 @@ class CMyList {
 
 class CMyUI {
    public:
-    void PrintMenu() {
+    int PrintMenu() {
         system("cls");
         cout << "[1] add\t"
              << "[2] print\t"
-             << "[3] Exit\n"
+             << "[0] Exit\n"
              << endl;
+
+        cout.flush();
+        int nInput = 0;
+        cin >> nInput;
+        return nInput;
     }
 
     void Run() {
         char szName[32];
         int nInput = 0;
 
-        switch (nInput) {
+        switch (nInput = PrintMenu()) {
             case 1:  //add
                 cout << "이름: ";
                 cout.flush();
@@ -92,7 +97,7 @@ class CMyUI {
 int _tmain(int argc, _TCHAR* argv[]) {
     // 프로그램 시작
     CMyUI ui;
-    ui.Run;
+    ui.Run();
 
     return 0;
 }

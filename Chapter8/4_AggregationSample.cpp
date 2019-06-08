@@ -60,19 +60,24 @@ class CMyUI {
     //참조 멤버는 반드시 초기화 목록을 이용해 초기화해야 한다.
     CMyUI(CMyList& rList) : m_list(rList) {}
 
-    void PrintMenu() {
+    int PrintMenu() {
         system("cls");
         cout << "[1] add\t"
              << "[2] print\t"
              << "[3] Exit\n"
              << endl;
+
+        cout.flush();
+        int nInput = 0;
+        cin >> nInput;
+        return nInput;
     }
 
     void Run() {
         char szName[32];
         int nInput = 0;
 
-        switch (nInput) {
+        switch (nInput = PrintMenu()) {
             case 1:  //add
                 cout << "이름: ";
                 cout.flush();
@@ -96,7 +101,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
     // 자료구조와 ui 객체를 별도로 선언하고 연결한다.
     CMyList list;
     CMyUI ui(list);
-    ui.Run;
+    ui.Run();
 
     return 0;
 }

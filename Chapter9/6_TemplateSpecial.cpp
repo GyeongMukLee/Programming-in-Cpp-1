@@ -8,7 +8,7 @@ class CMyData {
    public:
     CMyData(T param) : m_Data(param) {}
 
-    T getData() const { return m_nData; }
+    T getData() const { return m_Data; }
     void setData(T param) { m_Data = param; }
 
    private:
